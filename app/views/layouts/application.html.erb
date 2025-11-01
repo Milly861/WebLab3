@@ -4,10 +4,14 @@
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag 'application', media: 'all',
                           'data-turbolinks-track' => true %>
-  <%#= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= yield %>
+  <!-- Выведем строку с количеством символов -->
+  <p style="text-align: center; color: #666; font-size: 0.9em; margin: 10px 0;">
+    <%= title_with_length(yield(:title)) %>
+  </p>
+
+  <%= yield %>
 </body>
 </html>
