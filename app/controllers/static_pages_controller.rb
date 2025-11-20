@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
   end
 
   def about
+    @users = User.all.order(created_at: :desc)
   end
 
   def contact
